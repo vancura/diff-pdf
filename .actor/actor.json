@@ -1,0 +1,15 @@
+{
+  "actorSpecification": 1,
+  "name": "diff-pdf",
+  "title": "Diff PDF",
+  "description": "An Actor for comparing two PDFs and highlighting the differences.",
+  "version": "0.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerFile": "./Dockerfile",
+  "dockerContext": "../",
+  "input": "./input_schema.json",
+  "scripts": {
+    "run": "./actor.sh"
+  }
+}

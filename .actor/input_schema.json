@@ -1,0 +1,73 @@
+{
+  "title": "diff-pdf Actor Input",
+  "description": "Options for running diff-pdf on the Apify platform.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "pdfOneUrl": {
+      "title": "PDF File #1 (URL)",
+      "type": "string",
+      "description": "URL to the first PDF to compare.",
+      "prefill": "https://vancura.dev/assets/actor-test/diff-pdf-test-1.pdf",
+      "editor": "textfield"
+    },
+    "pdfTwoUrl": {
+      "title": "PDF file #2 (URL)",
+      "type": "string",
+      "description": "URL to the second PDF to compare.",
+      "prefill": "https://vancura.dev/assets/actor-test/diff-pdf-test-2.pdf",
+      "editor": "textfield"
+    },
+    "outputName": {
+      "title": "Output PDF Filename",
+      "type": "string",
+      "description": "Name of the difference PDF file that diff-pdf produces.",
+      "default": "diff.pdf",
+      "editor": "textfield"
+    },
+    "useGrayscale": {
+      "title": "Grayscale Differences",
+      "type": "boolean",
+      "description": "If true, only the colors will differ; the unchanged parts will appear in gray.",
+      "default": true
+    },
+    "markDifferences": {
+      "title": "Mark Differences",
+      "type": "boolean",
+      "description": "If true, add an additional gutter bar of differences to the left side of the resulting PDF.",
+      "default": true
+    },
+    "skipIdentical": {
+      "title": "Skip Identical Pages",
+      "type": "boolean",
+      "description": "If true, pages with no differences will be excluded from the output PDF.",
+      "default": false
+    },
+    "channelTolerance": {
+      "title": "Channel Tolerance",
+      "type": "integer",
+      "description": "Consider channel values equal if they fall within the specified tolerance. The valid range is 0 to 255.",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 255
+    },
+    "perPagePixelTolerance": {
+      "title": "Per-page pixel tolerance",
+      "type": "integer",
+      "description": "The total number of pixels that can differ per page before it is marked as different.",
+      "default": 0
+    },
+    "dpi": {
+      "title": "DPI",
+      "type": "integer",
+      "description": "Rasterization resolution. Valid range is 1 to 2400, default is 300.",
+      "default": 300,
+      "minimum": 1,
+      "maximum": 2400
+    }
+  },
+  "required": [
+    "pdfOneUrl",
+    "pdfTwoUrl"
+  ]
+}
